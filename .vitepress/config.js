@@ -1,4 +1,7 @@
 module.exports = {
-  base: "/",
-
+  base: '/',
+  lang: 'zh-CN',
+  head: [
+    ['link', { rel: 'icon', href: '/icon.png' }]
+  ]
 };
