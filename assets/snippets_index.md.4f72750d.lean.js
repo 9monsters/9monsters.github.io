@@ -1,0 +1,1 @@
+import{o as t,c as e}from"./app.4dd6ec24.js";const r='{"title":"Home","description":"","frontmatter":{"home":true},"relativePath":"snippets/index.md","lastUpdated":1620632757475}',o={};o.render=function(r,o,d,a,i,n){return t(),e("div")};export default o;export{r as __pageData};

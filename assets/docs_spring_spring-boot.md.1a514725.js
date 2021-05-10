@@ -1,0 +1,1 @@
+import{o as t,c as e}from"./app.4dd6ec24.js";const r='{"title":"","description":"","frontmatter":{},"relativePath":"blogs/index.md","lastUpdated":1620632757437}',d={};d.render=function(r,d,o,a,i,n){return t(),e("div")};export default d;export{r as __pageData};
