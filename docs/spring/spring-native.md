@@ -72,7 +72,7 @@ Spring Native由以下模块组成：
 本部分为您提供了使用`Cloud Native Buildpacks`构建`Spring Boot`本机应用程序的实用概述。这是使用`RESTful Web Service`入门指南的实用指南。
 
 ::: tip
-启动新的本机Spring Boot项目的最简单方法是转到start.spring.io，添加“ Spring Native”依赖项并生成项目。
+启动新的本机Spring Boot项目的最简单方法是转到[start.spring.io](https://start.spring.io/)，添加`Spring Native`依赖项并生成项目。
 :::
 
 #### 2.1.1 系统要求
