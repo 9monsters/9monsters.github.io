@@ -8,7 +8,8 @@ module.exports = {
     'prettier',
     'eslint:recommended',
     'plugin:vue/vue3-recommended',
-    'plugin:@typescript-eslint/recommended'
+    'plugin:@typescript-eslint/recommended',
+    'plugin:@lint-md/recommend'
   ],
   parserOptions: {
     ecmaVersion: 'latest',
@@ -21,5 +22,22 @@ module.exports = {
     'linebreak-style': ['error', 'unix'],
     quotes: ['error', 'single'],
     semi: ['error', 'never']
-  }
+  },
+  overrides: [
+    {
+      files: ['*.md'],
+      parser: '@lint-md/eslint-plugin/lib/parser',
+      extends: ['plugin:@lint-md/recommend'],
+      rules: {
+        // 在这里覆盖已有的 rules
+        '@lint-md/no-long-code': [
+          2,
+          {
+            length: 100,
+            exclude: []
+          }
+        ]
+      }
+    }
+  ]
 }
