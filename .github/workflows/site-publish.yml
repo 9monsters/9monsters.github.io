@@ -3,7 +3,11 @@ name: docs
 on:
   # 每当 push 到 main 分支时触发部署
   push:
-    branches: [main]
+    branches:
+      - main
+      - source
+  schedule:
+    - cron:  '* * * * *'
   # 手动触发部署
   workflow_dispatch:
 
@@ -43,9 +47,6 @@ jobs:
       - name: Build VuePress site
         run: yarn docs:build
 
-  publish:
-    runs-on: ubuntu-latest
-    steps:
       # 查看 workflow 的文档来获取更多信息
       # @see https://github.com/crazy-max/ghaction-github-pages
       - name: Deploy to GitHub Pages
