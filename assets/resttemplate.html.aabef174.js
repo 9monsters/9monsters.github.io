@@ -1,0 +1,1 @@
+const t={key:"v-db4f568c",path:"/2021/05/resttemplate.html",title:"",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1620628212e3,contributors:[{name:"wang jia",email:"wangjia_1919@163.com",commits:1}]},filePathRelative:"2021/05/resttemplate.md"};export{t as data};
