@@ -1,43 +1,70 @@
+const restricted = ["..", "../.."];
+
 module.exports = {
+  root: true,
   env: {
     browser: true,
-    es2021: true,
-    node: true
+    node: true,
   },
-  extends: [
-    'prettier',
-    'eslint:recommended',
-    'plugin:vue/vue3-recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:@lint-md/recommend'
-  ],
-  parserOptions: {
-    ecmaVersion: 'latest',
-    parser: '@typescript-eslint/parser',
-    sourceType: 'module'
-  },
-  plugins: ['vue', '@typescript-eslint'],
+  extends: ["@antfu", "prettier"],
   rules: {
-    indent: ['error', 2],
-    'linebreak-style': ['error', 'unix'],
-    quotes: ['error', 'single'],
-    semi: ['error', 'never']
+    "vue/no-deprecated-functional-template": "off",
+    "vue/one-component-per-file": "off",
+    "vue/no-template-shadow": "off",
+    "vue/require-prop-types": "off",
+    "spaced-comment": ["error", "always", { exceptions: ["#__PURE__"] }],
+    "no-restricted-imports": [
+      "error",
+      {
+        paths: restricted,
+      },
+    ],
+    "node/no-callback-literal": "off",
+    "import/namespace": "off",
+    "import/default": "off",
+    "import/no-named-as-default": "off",
+    "import/no-named-as-default-member": "off",
   },
   overrides: [
     {
-      files: ['*.md'],
-      parser: '@lint-md/eslint-plugin/lib/parser',
-      extends: ['plugin:@lint-md/recommend'],
+      files: [
+        "**/*.md",
+        "**/*.md/*.*",
+        "demo.vue",
+        "demo.client.vue",
+        "scripts/*.ts",
+        "*.test.ts",
+        "utils.ts",
+      ],
       rules: {
-        // 在这里覆盖已有的 rules
-        '@lint-md/no-long-code': [
-          2,
+        "no-alert": "off",
+        "no-console": "off",
+        "no-undef": "off",
+        "no-unused-vars": "off",
+        "no-restricted-imports": "off",
+        "@typescript-eslint/no-unused-vars": "off",
+        "@typescript-eslint/no-redeclare": "off",
+        "@typescript-eslint/no-invalid-this": "off",
+        "unused-imports/no-unused-vars": "off",
+        "@typescript-eslint/no-this-alias": [
+          "error",
           {
-            length: 100,
-            exclude: []
-          }
-        ]
-      }
-    }
-  ]
-}
+            allowedNames: ["self", "instance"],
+          },
+        ],
+      },
+    },
+    {
+      files: ["docs/.vitepress/**/*.*"],
+      rules: {
+        "no-restricted-imports": "off",
+      },
+    },
+    {
+      files: ["docs/.vitepress/theme/plugins/**/*.*"],
+      rules: {
+        "prefer-rest-params": "off",
+      },
+    },
+  ],
+};
