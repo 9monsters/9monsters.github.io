@@ -9,18 +9,15 @@
     "noUnusedLocals": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "verbatimModuleSyntax": true,
+    "preserveValueImports": true,
+    "importsNotUsedAsValues": "error",
     "jsx": "preserve",
     "lib": ["ESNext", "DOM"]
   },
   "include": [
     "docs",
     "docs/.vitepress/components/*.vue",
-    "docs/.vitepress/*.ts",
-    "node_modules/vite-pluginb-pwa/client",
-    "package.json",
-    "**/*.d.ts",
-    "**/*.ts"
+    "docs/.vitepress/*.ts"
   ],
   "exclude": ["**/node_modules/**", "**/dist/**"]
 }

@@ -16,6 +16,11 @@ export default defineConfig(async () => {
         allow: [resolve(__dirname, "..")],
       },
     },
+    css: {
+      less: {
+        math: "parens-division",
+      },
+    },
     plugins: [
       // custom
       MarkdownTransform(),
@@ -25,7 +30,7 @@ export default defineConfig(async () => {
         include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
         resolvers: [
           IconsResolver({
-            componentPrefix: "",
+            prefix: "",
           }),
         ],
         dts: "./.vitepress/components.d.ts",
