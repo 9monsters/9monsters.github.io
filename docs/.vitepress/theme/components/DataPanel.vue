@@ -11,7 +11,7 @@
         <h2 class="leading-[24px] text-[16px] font-[600]">
           本站总访问量 <span id="busuanzi_value_site_pv" class="font-bold" /> 次
         </h2>
-        <fa6-solid:heart-pulse class="heart" />
+        <fa6-solid:heart-pulse class="heart" style="color: var(--vp-c-text-code)" />
         <h2 class="leading-[24px] text-[16px]">
           本站访客数 <span id="busuanzi_value_site_uv" class="font-bold" /> 人次
         </h2>
