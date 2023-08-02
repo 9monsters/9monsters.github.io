@@ -46,7 +46,6 @@
     "vue": "^3.3.4"
   },
   "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown",
     "*.{js,ts,tsx,vue,md}": [
       "eslint --cache --fix"
     ]
