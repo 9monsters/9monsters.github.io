@@ -7,8 +7,9 @@ export function MarkdownTransform(): Plugin {
     name: "9monsters-md-transform",
     enforce: "pre",
     async transform(code, id) {
-      if (!id.match(/\.md\b/)) 
-return null;
+      if (!id.match(/\.md\b/)) {
+          return null;
+      }
       // convert links to relative
       code = code.replace(/https?:\/\/chodocs\.cn\//g, "/");
       const [_name, i] = id.split("/").slice(-2);
@@ -38,8 +39,9 @@ return null;
       }
 
       // cut index.md
-      if (_name === "docs" && i === "index.md") 
-return code;
+      if (_name === "docs" && i === "index.md") {
+          return code;
+      }
 
       const { footer } = await getDocsMarkdown();
       code = replacer(code, footer, "FOOTER", "tail");
@@ -55,13 +57,11 @@ return code;
 }
 
 export async function getDocsMarkdown(): Promise<any> {
-  const ContributorsSection: string = `## Contributors
-  <Contributors/>`;
 
   const CopyRightSection: string = `
   <CopyRight/>`;
 
-  const footer: string = `${ContributorsSection}\n${CopyRightSection}\n`;
+  const footer: string = `${CopyRightSection}\n`;
 
   return {
     footer,

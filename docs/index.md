@@ -17,6 +17,11 @@ hero:
       text: 开始阅读
       link: /guide
 features:
+  - icon: Spring
+    title: Spring Cloud
+    details: Spring Cloud。
+    link: /spring-cloud/
+    linkText: 编程学习
   - icon: ☁️
     title: 云原生
     details: 云原生知识。
@@ -48,16 +53,3 @@ const members = [
 </script>
 
 <DataPanel/>
-
-<VPTeamPage>
-  <VPTeamPageTitle>
-    <template #title>
-      核心成员介绍
-    </template>
-  </VPTeamPageTitle>
-  <VPTeamMembers
-    :members="members"
-  />
-</VPTeamPage>
-
-<HomeContributors/>
